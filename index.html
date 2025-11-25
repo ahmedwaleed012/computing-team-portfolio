@@ -35,21 +35,42 @@
             }
         }
 
-        // Dummy function for demonstrating link actions
+        // IMPORTANT: Never use alert() in production. Using a custom modal is better.
+        // This dummy function demonstrates link actions
         function viewProfile(name) {
-            // In a real application, you would replace this with an actual window.open('URL')
-            alert(`Opening profile link for ${name}. (Replace this alert with a link to their social media or portfolio!)`);
+            console.log(`Attempting to open profile link for ${name}.`);
+            // You should replace this alert with an actual window.open('URL') or a modal display.
+            const messageBox = document.getElementById('messageBox');
+            const messageText = document.getElementById('messageText');
+            messageText.textContent = `Opening profile link for ${name}. (In a real app, this would redirect to their social media or portfolio!)`;
+            messageBox.classList.remove('hidden');
+        }
+
+        function closeMessageBox() {
+            document.getElementById('messageBox').classList.add('hidden');
         }
     </script>
 </head>
 <body class="bg-dark-bg text-gray-100 antialiased">
 
+    <!-- Custom Message Box (to replace alert()) -->
+    <div id="messageBox" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-card-bg p-6 rounded-xl shadow-2xl max-w-sm w-full border border-primary">
+            <p id="messageText" class="text-white mb-4 text-center"></p>
+            <button onclick="closeMessageBox()" class="w-full bg-primary hover:bg-teal-700 text-white font-semibold py-2 rounded-lg transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
+
     <!-- Header & Navigation (Simple) -->
-    <header class="p-4 border-b border-gray-700">
+    <header class="p-4 border-b border-gray-700 sticky top-0 z-10 bg-dark-bg/95 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-primary">COMPUTING</h1>
+            <!-- Logo -->
+            <img src="5879995891526519158.jpg" alt="Computing Team Logo - A Vision for Tomorrow" class="h-8 md:h-10 w-auto rounded-md object-cover">
             <!-- Navigation items could go here if more pages existed -->
-            <button class="md:hidden text-gray-100" onclick="alert('Navigation would be here!')">
+            <h1 class="text-xl md:text-2xl font-bold text-primary hidden md:block">COMPUTING TEAM</h1>
+            <button class="md:hidden text-gray-100" onclick="viewProfile('Navigation')">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
@@ -83,45 +104,43 @@
             <div class="max-w-7xl mx-auto">
                 <h3 class="text-4xl font-bold text-center mb-12 text-primary">The Team</h3>
 
-                <!-- Team Categories -->
-
                 <!-- 1. Leadership & Management -->
                 <div class="mb-16">
-                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Leadership & Management</h4>
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Leadership & Management (6)</h4>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                        <!-- Ahmed Waleed -->
+                        <!-- Ahmed Waleed (Team Leader) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="crown" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.12 AM (2).jpeg" alt="Photo of Ahmed Waleed" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-yellow-400">
                             <p class="font-bold text-lg">Ahmed Waleed</p>
                             <p class="text-sm text-gray-400">Team Leader</p>
                         </div>
-                        <!-- Abdulrahman Khaled -->
+                        <!-- Abdulrahman Khaled (Co-leader) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="shield" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.12 AM (3).jpeg" alt="Photo of Abdulrahman Khaled" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-blue-400">
                             <p class="font-bold text-lg">Abdulrahman Khaled</p>
                             <p class="text-sm text-gray-400">Co-leader</p>
                         </div>
-                        <!-- Aml Abdelaziz -->
+                        <!-- Kareem Awad (HR) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="clipboard-check" class="w-8 h-8 mx-auto mb-3 text-orange-400"></i>
-                            <p class="font-bold text-lg">Aml Abdelaziz</p>
-                            <p class="text-sm text-gray-400">Project Management</p>
-                        </div>
-                        <!-- Kareem Awad -->
-                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="handshake" class="w-8 h-8 mx-auto mb-3 text-pink-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.12 AM (4).jpeg" alt="Photo of Kareem Awad" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-pink-400">
                             <p class="font-bold text-lg">Kareem Awad</p>
                             <p class="text-sm text-gray-400">HR</p>
                         </div>
-                        <!-- Israa Helal -->
+                        <!-- Aml Abdelaziz (Project Management) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="list-checks" class="w-8 h-8 mx-auto mb-3 text-green-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.12 AM.jpeg" alt="Photo of Aml Abdelaziz" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-orange-400">
+                            <p class="font-bold text-lg">Aml Abdelaziz</p>
+                            <p class="text-sm text-gray-400">Project Management</p>
+                        </div>
+                        <!-- Israa Helal (Task Manager) -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.13 AM (1).jpeg" alt="Photo of Israa Helal" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-green-400">
                             <p class="font-bold text-lg">Israa Helal</p>
                             <p class="text-sm text-gray-400">Task Manager</p>
                         </div>
-                        <!-- Mohammed Mahmoud -->
+                        <!-- Mohammed Mahmoud (Organizer) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="calendar" class="w-8 h-8 mx-auto mb-3 text-purple-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.13 AM.jpeg" alt="Photo of Mohammed Mahmoud" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-purple-400">
                             <p class="font-bold text-lg">Mohammed Mahmoud</p>
                             <p class="text-sm text-gray-400">Organizer</p>
                         </div>
@@ -130,27 +149,27 @@
 
                 <!-- 2. Instruction & Expertise -->
                 <div class="mb-16">
-                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Instruction & Expertise</h4>
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Instruction & Expertise (2)</h4>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <!-- Youssef Hani -->
+                        <!-- Youssef Hani (Flutter Instructor) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="smartphone" class="w-8 h-8 mx-auto mb-3 text-primary"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 10.36.13 AM (1).jpeg" alt="Photo of Youssef Hani" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-primary">
                             <p class="font-bold text-lg">Youssef Hani</p>
                             <p class="text-sm text-primary">Flutter Instructor</p>
                         </div>
-                        <!-- Khalid Gamal -->
+                        <!-- Khalid Gamal (C++ Instructor) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
-                            <i data-lucide="code" class="w-8 h-8 mx-auto mb-3 text-primary"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.11 AM (1).jpeg" alt="Photo of Khalid Gamal" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-primary">
                             <p class="font-bold text-lg">Khalid Gamal</p>
                             <p class="text-sm text-primary">C++ Instructor</p>
                         </div>
-                        <!-- Placeholder 1 -->
+                        <!-- Placeholder 1 (Future Instructor) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
                             <i data-lucide="book-open-check" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
                             <p class="font-bold text-lg">Instructor Slot</p>
                             <p class="text-sm text-gray-500">Future Hire</p>
                         </div>
-                         <!-- Placeholder 2 -->
+                        <!-- Placeholder 2 (Future Instructor) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
                             <i data-lucide="graduation-cap" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
                             <p class="font-bold text-lg">Instructor Slot</p>
@@ -159,31 +178,31 @@
                     </div>
                 </div>
 
-                <!-- 3. Media & Creative (Links Added) -->
+                <!-- 3. Media & Creative -->
                 <div class="mb-16">
-                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Media & Creative</h4>
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Media & Creative (4)</h4>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <!-- Menna Ibrahim (Link added with viewProfile function) -->
+                        <!-- Menna Ibrahim (Head of Media) -->
                         <a href="javascript:void(0);" onclick="viewProfile('Menna Ibrahim')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
-                            <i data-lucide="mic-2" class="w-8 h-8 mx-auto mb-3 text-red-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.11 AM (2).jpeg" alt="Photo of Menna Ibrahim" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-red-400">
                             <p class="font-bold text-lg">Menna Ibrahim</p>
                             <p class="text-sm text-gray-400">Head of Media</p>
                         </a>
-                        <!-- Habiba ahmed (Link added with viewProfile function) -->
+                        <!-- Habiba ahmed (Vice of Media) -->
                         <a href="javascript:void(0);" onclick="viewProfile('Habiba ahmed')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
-                            <i data-lucide="megaphone" class="w-8 h-8 mx-auto mb-3 text-red-400"></i>
+                            <img src="WhatsApp Image 2025-10-19 at 9.36.11 AM (3).jpeg" alt="Photo of Habiba ahmed" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-red-400">
                             <p class="font-bold text-lg">Habiba ahmed</p>
                             <p class="text-sm text-gray-400">Vice of Media</p>
                         </a>
-                        <!-- Lujayn (Link added with viewProfile function) -->
+                        <!-- Lujayn (Graphic Designer) - Icon used as image not provided -->
                         <a href="javascript:void(0);" onclick="viewProfile('Lujayn')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
                             <i data-lucide="palette" class="w-8 h-8 mx-auto mb-3 text-fuchsia-400"></i>
                             <p class="font-bold text-lg">Lujayn</p>
                             <p class="text-sm text-gray-400">Graphic Designer</p>
                         </a>
-                        <!-- Angelo Joseph (Link added with viewProfile function) -->
+                        <!-- Angelo Joseph (Video Editor) -->
                         <a href="javascript:void(0);" onclick="viewProfile('Angelo Joseph')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
-                            <i data-lucide="clapperboard" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                            <img src="6023725206855601064.jpg" alt="Photo of Angelo Joseph" class="w-20 h-20 mx-auto mb-3 rounded-full object-cover border-2 border-yellow-400">
                             <p class="font-bold text-lg">Angelo Joseph</p>
                             <p class="text-sm text-gray-400">Video Editor</p>
                         </a>
@@ -192,27 +211,27 @@
 
                 <!-- 4. Outreach & PR -->
                 <div>
-                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Outreach & PR</h4>
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Outreach & PR (2)</h4>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <!-- Fares El sayed -->
+                        <!-- Fares El Sayed (PR) - Icon used as image not provided -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
                             <i data-lucide="mail" class="w-8 h-8 mx-auto mb-3 text-cyan-400"></i>
                             <p class="font-bold text-lg">Fares El Sayed</p>
                             <p class="text-sm text-gray-400">PR</p>
                         </div>
-                        <!-- Rahma -->
+                        <!-- Rahma (Vice of Pr) - Icon used as image not provided -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center">
                             <i data-lucide="user-plus" class="w-8 h-8 mx-auto mb-3 text-cyan-400"></i>
                             <p class="font-bold text-lg">Rahma</p>
                             <p class="text-sm text-gray-400">Vice of Pr</p>
                         </div>
-                        <!-- Placeholder 3 -->
+                        <!-- Placeholder 3 (Future PR) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
                             <i data-lucide="globe" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
                             <p class="font-bold text-lg">Partnerships</p>
                             <p class="text-sm text-gray-500">Coordinator</p>
                         </div>
-                         <!-- Placeholder 4 -->
+                        <!-- Placeholder 4 (Future Community) -->
                         <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
                             <i data-lucide="speech" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
                             <p class="font-bold text-lg">Community</p>
