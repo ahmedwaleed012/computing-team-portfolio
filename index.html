@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computing Team Portfolio - Vision for Tomorrow</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom font and basic setup */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for the team member cards */
+        .member-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0D9488', // Teal accent color
+                        'dark-bg': '#111827', // Dark gray
+                        'card-bg': '#1F2937', // Slightly lighter card background
+                    }
+                }
+            }
+        }
+
+        // Dummy function for demonstrating link actions
+        function viewProfile(name) {
+            // In a real application, you would replace this with an actual window.open('URL')
+            alert(`Opening profile link for ${name}. (Replace this alert with a link to their social media or portfolio!)`);
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-gray-100 antialiased">
+
+    <!-- Header & Navigation (Simple) -->
+    <header class="p-4 border-b border-gray-700">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary">COMPUTING</h1>
+            <!-- Navigation items could go here if more pages existed -->
+            <button class="md:hidden text-gray-100" onclick="alert('Navigation would be here!')">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section: Mission and Vision -->
+        <section id="hero" class="py-20 md:py-32 text-center bg-gray-900 border-b border-gray-700">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                    <span class="text-white block">A Vision for Tomorrow</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Computing is a team that aims to provide and learn tech in every field for everyone.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#team" class="bg-primary hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 flex items-center">
+                        <i data-lucide="users" class="w-5 h-5 mr-2"></i> Meet the Team
+                    </a>
+                    <a href="#projects" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 flex items-center">
+                        <i data-lucide="folder-open" class="w-5 h-5 mr-2"></i> Our Work
+                    </a>
+                </div>
+            </div>
+            <script>lucide.createIcons();</script>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-16 md:py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-12 text-primary">The Team</h3>
+
+                <!-- Team Categories -->
+
+                <!-- 1. Leadership & Management -->
+                <div class="mb-16">
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Leadership & Management</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                        <!-- Ahmed Waleed -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="crown" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                            <p class="font-bold text-lg">Ahmed Waleed</p>
+                            <p class="text-sm text-gray-400">Team Leader</p>
+                        </div>
+                        <!-- Abdulrahman Khaled -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="shield" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+                            <p class="font-bold text-lg">Abdulrahman Khaled</p>
+                            <p class="text-sm text-gray-400">Co-leader</p>
+                        </div>
+                        <!-- Aml Abdelaziz -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="clipboard-check" class="w-8 h-8 mx-auto mb-3 text-orange-400"></i>
+                            <p class="font-bold text-lg">Aml Abdelaziz</p>
+                            <p class="text-sm text-gray-400">Project Management</p>
+                        </div>
+                        <!-- Kareem Awad -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="handshake" class="w-8 h-8 mx-auto mb-3 text-pink-400"></i>
+                            <p class="font-bold text-lg">Kareem Awad</p>
+                            <p class="text-sm text-gray-400">HR</p>
+                        </div>
+                        <!-- Israa Helal -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="list-checks" class="w-8 h-8 mx-auto mb-3 text-green-400"></i>
+                            <p class="font-bold text-lg">Israa Helal</p>
+                            <p class="text-sm text-gray-400">Task Manager</p>
+                        </div>
+                        <!-- Mohammed Mahmoud -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="calendar" class="w-8 h-8 mx-auto mb-3 text-purple-400"></i>
+                            <p class="font-bold text-lg">Mohammed Mahmoud</p>
+                            <p class="text-sm text-gray-400">Organizer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Instruction & Expertise -->
+                <div class="mb-16">
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Instruction & Expertise</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- Youssef Hani -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="smartphone" class="w-8 h-8 mx-auto mb-3 text-primary"></i>
+                            <p class="font-bold text-lg">Youssef Hani</p>
+                            <p class="text-sm text-primary">Flutter Instructor</p>
+                        </div>
+                        <!-- Khalid Gamal -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="code" class="w-8 h-8 mx-auto mb-3 text-primary"></i>
+                            <p class="font-bold text-lg">Khalid Gamal</p>
+                            <p class="text-sm text-primary">C++ Instructor</p>
+                        </div>
+                        <!-- Placeholder 1 -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
+                            <i data-lucide="book-open-check" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
+                            <p class="font-bold text-lg">Instructor Slot</p>
+                            <p class="text-sm text-gray-500">Future Hire</p>
+                        </div>
+                         <!-- Placeholder 2 -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
+                            <p class="font-bold text-lg">Instructor Slot</p>
+                            <p class="text-sm text-gray-500">Future Hire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Media & Creative (Links Added) -->
+                <div class="mb-16">
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Media & Creative</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- Menna Ibrahim (Link added with viewProfile function) -->
+                        <a href="javascript:void(0);" onclick="viewProfile('Menna Ibrahim')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
+                            <i data-lucide="mic-2" class="w-8 h-8 mx-auto mb-3 text-red-400"></i>
+                            <p class="font-bold text-lg">Menna Ibrahim</p>
+                            <p class="text-sm text-gray-400">Head of Media</p>
+                        </a>
+                        <!-- Habiba ahmed (Link added with viewProfile function) -->
+                        <a href="javascript:void(0);" onclick="viewProfile('Habiba ahmed')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
+                            <i data-lucide="megaphone" class="w-8 h-8 mx-auto mb-3 text-red-400"></i>
+                            <p class="font-bold text-lg">Habiba ahmed</p>
+                            <p class="text-sm text-gray-400">Vice of Media</p>
+                        </a>
+                        <!-- Lujayn (Link added with viewProfile function) -->
+                        <a href="javascript:void(0);" onclick="viewProfile('Lujayn')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
+                            <i data-lucide="palette" class="w-8 h-8 mx-auto mb-3 text-fuchsia-400"></i>
+                            <p class="font-bold text-lg">Lujayn</p>
+                            <p class="text-sm text-gray-400">Graphic Designer</p>
+                        </a>
+                        <!-- Angelo Joseph (Link added with viewProfile function) -->
+                        <a href="javascript:void(0);" onclick="viewProfile('Angelo Joseph')" class="member-card bg-card-bg p-6 rounded-xl text-center block hover:shadow-primary/50 cursor-pointer">
+                            <i data-lucide="clapperboard" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+                            <p class="font-bold text-lg">Angelo Joseph</p>
+                            <p class="text-sm text-gray-400">Video Editor</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Outreach & PR -->
+                <div>
+                    <h4 class="text-3xl font-semibold mb-8 border-b-2 border-primary pb-2">Outreach & PR</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- Fares El sayed -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="mail" class="w-8 h-8 mx-auto mb-3 text-cyan-400"></i>
+                            <p class="font-bold text-lg">Fares El Sayed</p>
+                            <p class="text-sm text-gray-400">PR</p>
+                        </div>
+                        <!-- Rahma -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center">
+                            <i data-lucide="user-plus" class="w-8 h-8 mx-auto mb-3 text-cyan-400"></i>
+                            <p class="font-bold text-lg">Rahma</p>
+                            <p class="text-sm text-gray-400">Vice of Pr</p>
+                        </div>
+                        <!-- Placeholder 3 -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
+                            <i data-lucide="globe" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
+                            <p class="font-bold text-lg">Partnerships</p>
+                            <p class="text-sm text-gray-500">Coordinator</p>
+                        </div>
+                         <!-- Placeholder 4 -->
+                        <div class="member-card bg-card-bg p-6 rounded-xl text-center opacity-50">
+                            <i data-lucide="speech" class="w-8 h-8 mx-auto mb-3 text-gray-500"></i>
+                            <p class="font-bold text-lg">Community</p>
+                            <p class="text-sm text-gray-500">Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script>lucide.createIcons();</script>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 px-4 bg-gray-900 border-t border-gray-700">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-12 text-primary">Our Projects</h3>
+
+                <!-- Project Card: C++ Camp -->
+                <div class="max-w-3xl mx-auto bg-card-bg p-8 rounded-xl shadow-2xl border border-gray-700">
+                    <h4 class="text-3xl font-bold mb-4 flex items-center">
+                        <i data-lucide="terminal" class="w-6 h-6 mr-3 text-green-400"></i> C++ Camp
+                    </h4>
+                    <p class="text-gray-300 mb-6">
+                        The C++ Camp was a major initiative designed to provide intensive, high-quality instruction in C++ programming. It covered fundamental concepts, advanced data structures, and practical application, equipping participants with the core skills needed for software development.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="font-semibold text-primary">Technical Focus</p>
+                            <p class="text-gray-400">C++ Programming, Algorithms, Data Structures</p>
+                        </div>
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="font-semibold text-primary">Key Contributors</p>
+                            <p class="text-gray-400">Khalid Gamal (Instruction), Aml Abdelaziz (Project Mgmt), Media Team (Promotion)</p>
+                        </div>
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="font-semibold text-primary">Result</p>
+                            <p class="text-gray-400">Successful foundational training for future tech leaders.</p>
+                        </div>
+                        <div class="p-3 bg-gray-800 rounded-lg">
+                            <p class="font-semibold text-primary">Next Project Focus</p>
+                            <p class="text-gray-400">Flutter Mobile Development (led by Youssef Hani)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>lucide.createIcons();</script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-8 bg-gray-950 text-center border-t border-gray-700">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-gray-500 text-sm mb-2">© 2025 Computing Team. All Rights Reserved.</p>
+            <p class="text-gray-500 text-xs">A Vision for Tomorrow | Empowering tech in every field for everyone.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
